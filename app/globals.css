@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 日本語可読性・改行バランスの最適化 */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+p, li, dd {
+  text-wrap: pretty;
+}
+
+/* 単語・文節の途中改行を防ぐユーティリティ */
+.text-balance-ja {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
